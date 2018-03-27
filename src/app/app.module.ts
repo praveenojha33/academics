@@ -16,6 +16,15 @@ import { EcComponent } from './ec/ec.component';
 import { CeComponent } from './ce/ce.component';
 import { MeComponent } from './me/me.component';
 import { ChComponent } from './ch/ch.component';
+import {AngularFireModule} from 'angularfire2';
+export const firebaseConfig={
+  apiKey: "AIzaSyB56rFsYHLTo2Yvsu9jabrcN2AbN9C2wqU",
+    authDomain: "chatapp-ab883.firebaseapp.com",
+    databaseURL: "https://chatapp-ab883.firebaseio.com",
+    projectId: "chatapp-ab883",
+    storageBucket: "chatapp-ab883.appspot.com",
+    messagingSenderId: "122127021966"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +44,8 @@ import { ChComponent } from './ch/ch.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
