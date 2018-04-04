@@ -17,14 +17,20 @@ import { CeComponent } from './ce/ce.component';
 import { MeComponent } from './me/me.component';
 import { ChComponent } from './ch/ch.component';
 import {AngularFireModule} from 'angularfire2';
-export const firebaseConfig={
-  apiKey: "AIzaSyB56rFsYHLTo2Yvsu9jabrcN2AbN9C2wqU",
-    authDomain: "chatapp-ab883.firebaseapp.com",
-    databaseURL: "https://chatapp-ab883.firebaseio.com",
-    projectId: "chatapp-ab883",
-    storageBucket: "chatapp-ab883.appspot.com",
-    messagingSenderId: "122127021966"
-};
+import { FirebaseConfig } from './firebase.config';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { EmailComponent } from './email/email.component';
+import { SignupComponent } from './signup/signup.component';
+import { MembersComponent } from './members/members.component';
+import { AuthGuard } from './auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { from } from 'rxjs/observable/from';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,14 +46,22 @@ export const firebaseConfig={
     EcComponent,
     CeComponent,
     MeComponent,
-    ChComponent
+    ChComponent,
+    LoginComponent,
+    EmailComponent,
+    SignupComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    FormsModule  
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

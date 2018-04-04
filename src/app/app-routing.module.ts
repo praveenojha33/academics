@@ -15,6 +15,14 @@ import { EcComponent } from './ec/ec.component';
 import { CeComponent } from './ce/ce.component';
 import { MeComponent } from './me/me.component';
 import { ChComponent } from './ch/ch.component';
+
+import { ModuleWithProviders } from '@angular/core';
+import { LoginComponent } from './login/login.component';
+import { MembersComponent } from './members/members.component';
+import { AuthGuard } from './auth.service';
+import { SignupComponent } from './signup/signup.component';
+import { EmailComponent } from './email/email.component';
+
 const appRoutes:Routes=[
 {path:'home',component:HomeComponent},
 {path:'pg',component:PgComponent},
@@ -26,6 +34,10 @@ const appRoutes:Routes=[
 {path:'ce',component:CeComponent},
 {path:'me',component:MeComponent},
 {path:'ch',component:ChComponent},
+{ path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    { path: 'login-email', component: EmailComponent },
+    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
 {
   path:'',
   redirectTo:'/home',
