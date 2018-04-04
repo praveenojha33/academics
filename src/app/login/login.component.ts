@@ -15,7 +15,6 @@ import { moveIn } from '../router.animations';
   host:{'[@moveIn]':''} 
 })
 export class LoginComponent implements OnInit {
-
   user: Observable<firebase.User>;
   error: any; 
   constructor(public afAuth: AngularFireAuth, private router: Router) {

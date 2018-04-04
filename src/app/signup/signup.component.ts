@@ -15,7 +15,6 @@ import { moveIn, fallIn } from '../router.animations';
   host: {'[@moveIn]': ''}
 })
 export class SignupComponent implements OnInit {
-
   state: string = '';
   error: any; 
   user: Observable<firebase.User>;
