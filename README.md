@@ -1,6 +1,7 @@
 # Academeics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
+
 **The project is currently hosted on http://academics.mmmut.surge.sh**
 
 ## Development server
